@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<iostream>
+using namespace std;
+int main()
+{
+	char a =-1;
+	unsigned char b = -191;
+	unsigned char c = -191;
+	printf("a=%d\n", a);
+	printf("b=%d\n", b);
+	printf("c=%d\n", c);
+	cout << "a=" << a << ",b=" << b << endl;
+	return 0;
+}
+
+
