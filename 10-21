@@ -4,13 +4,21 @@ using namespace std;
 int main()
 {
 	char a =-1;
-	unsigned char b = -191;
+	unsigned char b = -1;
 	unsigned char c = -191;
+	unsigned char d =  321;
 	printf("a=%d\n", a);
 	printf("b=%d\n", b);
 	printf("c=%d\n", c);
-	cout << "a=" << a << ",b=" << b << endl;
+	printf("d=%d\n", d);
+	cout << "a=" << a<< endl;
 	return 0;
 }
 
 
+1.-1存入a，首先对-1进行转换补码，为32个1，因为为char类型，存8位，故存111111111
+2.-1存入b，首先对-1进行转换补码，为32个1，因为为char类型，存8位，故存111111111，但由于b为unsigned char 存入的补码即原码，也就是b存入的值为255
+3.-191存入c，首先对-191转换补码，为11111111 11111111 11111111 01000001，存8位，为01000001，c为unsigned，值为65
+4.321存入d，原码补码相同，为00000000 00000000 00000001 01000001，存8位，为01000001，d为unsigned，值为65
+5.最后输出a=-1，b=255,c=A,d=A,a= 。对于前四个输出，原因如上
+  而对于最后第五个的输出，因为对char的类型的输出为ASCII码，而-1明显不在其范围内，同时查阅资料，0~31为控制符，输出后也同样无结果
